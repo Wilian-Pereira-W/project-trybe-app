@@ -30,8 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#036B52'
   },
-  splashImg: {
-  }
 });
 
 export default Splash;
