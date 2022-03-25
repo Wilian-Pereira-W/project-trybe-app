@@ -1,8 +1,34 @@
-import React from 'react';
-import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native';
+import CarouselRender from '../Carousel';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
+
+import { testimony }  from '../../db';
 
 
 function HomeContent() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const pagination =  () => {
+    return (
+      <Pagination
+        dotsLength={testimony.length}
+        activeDotIndex={activeSlide}
+        dotStyle={{
+            width: 20,
+            height: 20,
+            borderRadius: 10,
+            marginHorizontal: 8,
+            backgroundColor: '#2FC18C'
+        }}
+        inactiveDotStyle={{
+            // Define styles for inactive dots here
+        }}
+        inactiveDotOpacity={0.4}
+        inactiveDotScale={0.6}
+      />
+  );
+  }
   return (
     <View>
       <ScrollView>
@@ -18,6 +44,22 @@ function HomeContent() {
             style={styles.contentImg}
             source={require('../../assets/images/principal.png')}
           />
+          <View style={styles.working}>
+            <Text style={styles.workingText}>
+              92% das pessoas formadas já estão trabalhando em até 3 meses após a formatura.
+              Esse número é atualizado 90 dias após a conclusão de cada turma.
+            </Text>
+          </View>
+          <Carousel 
+            layout={'default'}
+            useScrollView={true}
+            data={testimony}
+            sliderWidth={300}
+            itemWidth={280}
+            renderItem={CarouselRender}
+            onSnapToItem={(index) => setActiveSlide(index) }
+          />
+          {pagination()}
         </View>
       </ScrollView>
     </View>
@@ -31,7 +73,7 @@ const styles = StyleSheet.create({
   },
   contentTitle: {
     width: '80%',
-    fontSize: 36,
+    fontSize: 25,
     fontWeight: '300',
     color: '#525252',
     borderBottomWidth: 2,
@@ -62,8 +104,23 @@ const styles = StyleSheet.create({
   contentImg: {
     marginTop: 80,
     maxWidth: '100%',
-    maxHeight: 400
-  }
+    maxHeight: 330
+  },
+  working: {
+    backgroundColor: '#DBDDE3',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    padding: 15,
+    paddingLeft: 30,
+    paddingRight: 30,
+    marginTop: 20
+  },
+  workingText: {
+    fontSize: 22,
+    fontWeight: '300',
+    color: '#3E3F41'
+  },
 });
 
 
