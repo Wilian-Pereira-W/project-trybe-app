@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import CarouselRender from '../Carousel';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
+import TeachToProgram from '../TeachToProgram';
 
 import { testimony }  from '../../db';
 
@@ -33,34 +34,40 @@ function HomeContent() {
     <View>
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.contentTitle}>A porta de entrada para sua carreira em tecnologia</Text>
-          <Text  style={styles.contentText}>Construímos nosso currículo com base no que o mercado de trabalho busca em profissionais de tecnologia.
-            Com o Modelo de Sucesso Compartilhado, você tem a opção de começar a pagar apenas quando estiver trabalhando.
-          </Text>
-          <TouchableOpacity style={styles.contentBtn}>
-            <Text style={styles.contentBtnText}>Dê o primeiro passo</Text>
-          </TouchableOpacity>
-          <Image 
-            style={styles.contentImg}
-            source={require('../../assets/images/principal.png')}
-          />
-          <View style={styles.working}>
-            <Text style={styles.workingText}>
-              92% das pessoas formadas já estão trabalhando em até 3 meses após a formatura.
-              Esse número é atualizado 90 dias após a conclusão de cada turma.
+            <Text style={styles.contentTitle}>A porta de entrada para sua carreira em tecnologia</Text>
+            <Text  style={styles.contentText}>Construímos nosso currículo com base no que o mercado de trabalho busca em profissionais de tecnologia.
+              Com o Modelo de Sucesso Compartilhado, você tem a opção de começar a pagar apenas quando estiver trabalhando.
             </Text>
-          </View>
-          <Carousel 
-            layout={'default'}
-            useScrollView={true}
-            data={testimony}
-            sliderWidth={300}
-            itemWidth={280}
-            renderItem={CarouselRender}
-            onSnapToItem={(index) => setActiveSlide(index) }
-          />
-          {pagination()}
-        </View>
+            <TouchableOpacity style={styles.contentBtn}>
+              <Text style={styles.contentBtnText}>Dê o primeiro passo</Text>
+            </TouchableOpacity>
+            <Image 
+              style={styles.contentImg}
+              source={require('../../assets/images/principal.png')}
+            />
+            <View style={styles.working}>
+              <Text style={styles.workingText}>
+                92% das pessoas formadas já estão trabalhando em até 3 meses após a formatura.
+                Esse número é atualizado 90 dias após a conclusão de cada turma.
+              </Text>
+            </View>
+            <Carousel 
+              layout={'default'}
+              useScrollView={true}
+              data={testimony}
+              sliderWidth={300}
+              itemWidth={280}
+              renderItem={CarouselRender}
+              onSnapToItem={(index) => setActiveSlide(index) }
+            />
+            {pagination()}
+            <TouchableOpacity style={styles.contentBtnWant}>
+              <Text style={styles.contentBtnWantText}>Quero me inscrever</Text>
+            </TouchableOpacity>
+              <Text style={styles.contentTitleOurWork} numberOfLines={2}>Nosso trabalho é te ajudar a conseguir o seu</Text>
+            <Text style={styles.contentTitleOurWorkText}>Ensino de qualidade é ensino completo.</Text>
+            <TeachToProgram />
+        </View> 
       </ScrollView>
     </View>
   );
@@ -78,6 +85,14 @@ const styles = StyleSheet.create({
     color: '#525252',
     borderBottomWidth: 2,
     borderBottomColor: '#2FC18C',
+    marginTop: 40
+  },
+  contentTitleOurWork: {
+    width: '80%',
+    fontSize: 25,
+    fontWeight: '300',
+    color: '#525252',
+    marginTop: 70
   },
   contentText: {
     width: '80%',
@@ -86,6 +101,13 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     color: '#525252'
   }, 
+  contentTitleOurWorkText : {
+    width: '80%',
+    fontSize: 16,
+    marginTop: 30,
+    fontWeight: '300',
+    color: '#525252'
+  },
   contentBtn: {
     backgroundColor: '#006dfb',
     width: 150,
@@ -97,6 +119,20 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   contentBtnText: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: '#FFF'
+  },
+  contentBtnWant: {
+    backgroundColor: '#006dfb',
+    width: 150,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    marginTop: 60,
+  },
+  contentBtnWantText: {
     fontSize: 14,
     fontWeight: "500",
     color: '#FFF'
@@ -114,7 +150,8 @@ const styles = StyleSheet.create({
     padding: 15,
     paddingLeft: 30,
     paddingRight: 30,
-    marginTop: 20
+    marginTop: 50,
+    marginBottom: 50
   },
   workingText: {
     fontSize: 22,
