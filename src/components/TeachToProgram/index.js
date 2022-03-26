@@ -39,7 +39,7 @@ function TeachToProgram() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50
+    marginTop: 50,
   },
   contentBtn: {
     backgroundColor: '#2FC18C',
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     flexDirection: 'row',
     borderTopRightRadius: 5,
-    borderTopLeftRadius: 5
+    borderTopLeftRadius: 5,
   },
   contentProgram:{
     backgroundColor: '#2FC18C',
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   contentProgrammingImg: {
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
   },
   contentProgrammingText:{
     fontSize: 20,
