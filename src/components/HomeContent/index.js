@@ -72,6 +72,10 @@ function HomeContent() {
             <TeachToProgram />
             <WeTeachToLearn />
             <WeTeachToWork />
+            <Image style={styles.studentImg}
+              source={require('../../assets/images/estudante-trybe.png')}
+            />
+             <Text numberOfLines={2} style={styles.contentTitleFormation}>Conheça nossa formação</Text>
         </View> 
       </ScrollView>
     </View>
@@ -163,6 +167,20 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     color: '#3E3F41'
   },
+  studentImg: {
+    marginTop: 80,
+    maxWidth: '100%',
+    maxHeight: 330
+  },
+  contentTitleFormation: {
+    width: '80%',
+    fontSize: 35,
+    fontWeight: '300',
+    color: '#525252',
+    borderBottomWidth: 2,
+    borderBottomColor: '#2FC18C',
+    marginTop: 40
+  }
 });
 
 export default HomeContent;
