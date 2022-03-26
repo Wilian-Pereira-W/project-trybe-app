@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   studentImg: {
     marginTop: 80,
     maxWidth: '100%',
-    maxHeight: 330
+    maxHeight: 450
   },
   contentTitleFormation: {
     width: '80%',
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     color: '#525252',
     borderBottomWidth: 2,
     borderBottomColor: '#2FC18C',
-    marginTop: 40
+    marginTop: 90
   }
 });
 
