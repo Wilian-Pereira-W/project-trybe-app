@@ -3,8 +3,11 @@ import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView, FlatList }
 import CarouselRender from '../Carousel';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import TeachToProgram from '../TeachToProgram';
-
+import WeTeachToLearn from '../ WeTeachToLearn';
+import WeTeachToWork from '../ WeTeachToWork';
 import { testimony }  from '../../db';
+
+
 
 
 function HomeContent() {
@@ -65,8 +68,10 @@ function HomeContent() {
               <Text style={styles.contentBtnWantText}>Quero me inscrever</Text>
             </TouchableOpacity>
               <Text style={styles.contentTitleOurWork} numberOfLines={2}>Nosso trabalho é te ajudar a conseguir o seu</Text>
-            <Text style={styles.contentTitleOurWorkText}>Ensino de qualidade é ensino completo.</Text>
+              <Text style={styles.contentTitleOurWorkText}>Ensino de qualidade é ensino completo.</Text>
             <TeachToProgram />
+            <WeTeachToLearn />
+            <WeTeachToWork />
         </View> 
       </ScrollView>
     </View>
@@ -106,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 30,
     fontWeight: '300',
-    color: '#525252'
+    color: '#525252',
   },
   contentBtn: {
     backgroundColor: '#006dfb',
@@ -159,6 +164,5 @@ const styles = StyleSheet.create({
     color: '#3E3F41'
   },
 });
-
 
 export default HomeContent;
