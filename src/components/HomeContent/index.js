@@ -6,6 +6,7 @@ import TeachToProgram from '../TeachToProgram';
 import WeTeachToLearn from '../ WeTeachToLearn';
 import WeTeachToWork from '../ WeTeachToWork';
 import { testimony }  from '../../db';
+import Modules from '../ Modules';
 
 
 
@@ -76,6 +77,7 @@ function HomeContent() {
               source={require('../../assets/images/estudante-trybe.png')}
             />
              <Text numberOfLines={2} style={styles.contentTitleFormation}>Conheça nossa formação</Text>
+             <Modules />
         </View> 
       </ScrollView>
     </View>
