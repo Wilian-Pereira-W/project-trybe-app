@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
-    marginTop: 40,
+    marginTop: 30,
   },
   btnText: {
     fontSize: 14,
