@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import CarouselRender from '../Carousel';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -10,17 +10,19 @@ import DuringFormation from '../DuringFormation';
 import CarouselCompany from '../CarouselCompany';
 import { PaginationTestimony, PaginationCompany } from '../Pagination';
 import { testimony, company }  from '../../db';
-
-
-
+import { MenuContext } from '../../contexts/MenuContext';
+import Menu from '../Menu';
 
 
 function HomeContent() {
+  const { menuVisible} = useContext(MenuContext);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeSlideCompany, setActiveSlideConpany] = useState(0);
+  
 
   return (
     <View>
+      {menuVisible && (<Menu />)}
       <ScrollView>
         <View style={styles.container}>
             <Text style={styles.contentTitle}>A porta de entrada para sua carreira em tecnologia</Text>
@@ -64,7 +66,7 @@ function HomeContent() {
              <Text numberOfLines={2} style={styles.contentTitleFormation}>Conheça nossa formação</Text>
              <Modules />
              <DuringFormation />
-             <View style={styles.contenCompany}>
+             <View style={styles.contentCompany}>
                 <Text style={styles.contentTitleCompany}>Empresas que estão de olho em Trybers</Text>
              </View>
              <Carousel 
@@ -77,6 +79,11 @@ function HomeContent() {
               onSnapToItem={(index) => setActiveSlideConpany(index) }
             />
               {PaginationCompany(company, activeSlideCompany)}
+              <View>
+                <TouchableOpacity style={styles.contentCompanyBtn}>
+                  <Text style={styles.contentCompanyBtnText}>Quero ser empresa parceita</Text>
+                </TouchableOpacity>
+              </View>
         </View> 
       </ScrollView>
     </View>
@@ -96,21 +103,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#2FC18C',
     marginTop: 40
-  },
-  contenCompany:{
-    backgroundColor: '#FFF',
-    width: '100%',
-    height: 200,
-  },
-  contentTitleCompany: {
-    width: '80%',
-    fontSize: 40,
-    fontWeight: '300',
-    color: '#525252',
-    borderBottomWidth: 2,
-    borderBottomColor: '#2FC18C',
-    marginTop: 40,
-    marginLeft: 50
   },
   contentTitleOurWork: {
     width: '80%',
@@ -197,6 +189,35 @@ const styles = StyleSheet.create({
     borderBottomColor: '#2FC18C',
     marginTop: 90
   },
+  contentCompany:{
+    backgroundColor: '#FFF',
+    width: '100%',
+    height: 200,
+  },
+  contentTitleCompany: {
+    width: '80%',
+    fontSize: 40,
+    fontWeight: '300',
+    color: '#525252',
+    borderBottomWidth: 2,
+    borderBottomColor: '#2FC18C',
+    marginTop: 40,
+    marginLeft: 50
+  },
+  contentCompanyBtn:{
+    backgroundColor: '#006dfb',
+    width: 250,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    marginTop: 30,
+  },
+  contentCompanyBtnText: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: '#FFF'
+  }
 });
 
 export default HomeContent;
