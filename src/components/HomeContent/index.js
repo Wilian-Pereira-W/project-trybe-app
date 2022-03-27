@@ -5,35 +5,20 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 import TeachToProgram from '../TeachToProgram';
 import WeTeachToLearn from '../ WeTeachToLearn';
 import WeTeachToWork from '../ WeTeachToWork';
-import { testimony }  from '../../db';
 import Modules from '../ Modules';
+import DuringFormation from '../DuringFormation';
+import CarouselCompany from '../CarouselCompany';
+import { PaginationTestimony, PaginationCompany } from '../Pagination';
+import { testimony, company }  from '../../db';
+
 
 
 
 
 function HomeContent() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlideCompany, setActiveSlideConpany] = useState(0);
 
-  const pagination =  () => {
-    return (
-      <Pagination
-        dotsLength={testimony.length}
-        activeDotIndex={activeSlide}
-        dotStyle={{
-            width: 20,
-            height: 20,
-            borderRadius: 10,
-            marginHorizontal: 8,
-            backgroundColor: '#2FC18C'
-        }}
-        inactiveDotStyle={{
-            // Define styles for inactive dots here
-        }}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-      />
-  );
-  }
   return (
     <View>
       <ScrollView>
@@ -64,7 +49,7 @@ function HomeContent() {
               renderItem={CarouselRender}
               onSnapToItem={(index) => setActiveSlide(index) }
             />
-            {pagination()}
+            {PaginationTestimony(testimony, activeSlide)}
             <TouchableOpacity style={styles.contentBtnWant}>
               <Text style={styles.contentBtnWantText}>Quero me inscrever</Text>
             </TouchableOpacity>
@@ -78,6 +63,20 @@ function HomeContent() {
             />
              <Text numberOfLines={2} style={styles.contentTitleFormation}>Conheça nossa formação</Text>
              <Modules />
+             <DuringFormation />
+             <View style={styles.contenCompany}>
+                <Text style={styles.contentTitleCompany}>Empresas que estão de olho em Trybers</Text>
+             </View>
+             <Carousel 
+              layout={'default'}
+              useScrollView={true}
+              data={company}
+              sliderWidth={420}
+              itemWidth={420}
+              renderItem={CarouselCompany}
+              onSnapToItem={(index) => setActiveSlideConpany(index) }
+            />
+              {PaginationCompany(company, activeSlideCompany)}
         </View> 
       </ScrollView>
     </View>
@@ -97,6 +96,21 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#2FC18C',
     marginTop: 40
+  },
+  contenCompany:{
+    backgroundColor: '#FFF',
+    width: '100%',
+    height: 200,
+  },
+  contentTitleCompany: {
+    width: '80%',
+    fontSize: 40,
+    fontWeight: '300',
+    color: '#525252',
+    borderBottomWidth: 2,
+    borderBottomColor: '#2FC18C',
+    marginTop: 40,
+    marginLeft: 50
   },
   contentTitleOurWork: {
     width: '80%',
@@ -182,7 +196,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#2FC18C',
     marginTop: 90
-  }
+  },
 });
 
 export default HomeContent;
