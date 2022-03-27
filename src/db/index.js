@@ -47,4 +47,43 @@ export const testimony = [
     hired: 'Contratado pela U4Crypto',
     testimony: '“Se eu pudesse resumir o que a Trybe representa na minha vida em uma palavra, eu diria crescimento. Em todos os aspectos. Minha carreira alavancou, minha vida pessoal alavancou, e eu serei eternamente grato por todas as experiências.”'
   }
+];
+
+export const company = [
+  {
+    id: 1,
+    img: require('../assets/images/empresa-1.jpg'),
+  },
+  {
+    id: 2,
+    img: require('../assets/images/empresa-2.jpg'),
+  },
+  {
+    id: 3,
+    img: require('../assets/images/empresa-3.jpg'),
+  },
+  {
+    id: 4,
+    img: require('../assets/images/empresa-4.jpg'),
+  },
+  {
+    id: 5,
+    img: require('../assets/images/empresa-5.jpg'),
+  },
+  {
+    id: 6,
+    img: require('../assets/images/empresa-6.jpg'),
+  },
+  {
+    id: 7,
+    img: require('../assets/images/empresa-7.jpg'),
+  },
+  {
+    id: 8,
+    img: require('../assets/images/empresa-8.jpg'),
+  },
+  {
+    id: 9,
+    img: require('../assets/images/empresa-9.jpg'),
+  },
 ]
