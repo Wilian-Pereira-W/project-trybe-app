@@ -1,46 +1,51 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image, View, TouchableOpacity, Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 import Splash from './src/pages/Splash';
 import Home from './src/pages/Home';
+import MenuProvider from './src/contexts/MenuProvider';
+import MenuButton from './src/components/MenuButton';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
+
+  
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
-        <Stack.Screen 
-          name="Splash"
-          component={Splash}
-          options={{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerStyle: {
-              backgroundColor: '#036B52',
-            },
-            headerTitle: () => (
-                <View style={styles.container}>
-                  <Image style={styles.logo}
-                    source={require('./src/assets/images/logo.png')} />
-                  <View style={styles.menu}>
-                    <TouchableOpacity>
-                      <Text style={styles.login}>Login</Text>
-                    </TouchableOpacity>
-                    <Image style={styles.menuImg}
-                      source={require('./src/assets/images/menu.png')} />
+      <MenuProvider>
+        <Stack.Navigator initialRouteName="Splash">
+          <Stack.Screen 
+            name="Splash"
+            component={Splash}
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              headerStyle: {
+                backgroundColor: '#036B52',
+              },
+              headerTitle: () => (
+                  <View style={styles.container}>
+                    <Image style={styles.logo}
+                      source={require('./src/assets/images/logo.png')} />
+                    <View style={styles.menu}>
+                      <TouchableOpacity>
+                        <Text style={styles.login}>Login</Text>
+                      </TouchableOpacity>
+                      <MenuButton />
+                    </View>
                   </View>
-                </View>
-            )
-          }}
-        />
-      </Stack.Navigator>
+              )
+            }}
+          />
+        </Stack.Navigator>
+      </MenuProvider>
     </NavigationContainer>
   );
 }
