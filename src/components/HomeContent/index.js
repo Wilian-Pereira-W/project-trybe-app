@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native';
+import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
 import CarouselRender from '../Carousel';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
+import Carousel from 'react-native-snap-carousel';
 import TeachToProgram from '../TeachToProgram';
 import WeTeachToLearn from '../ WeTeachToLearn';
 import WeTeachToWork from '../ WeTeachToWork';
@@ -13,6 +13,7 @@ import { testimony, company }  from '../../db';
 import { MenuContext } from '../../contexts/MenuContext';
 import Menu from '../Menu';
 import TalkingAboutUs from '../ TalkingAboutUs';
+import Footer from '../Footer';
 
 
 function HomeContent() {
@@ -100,6 +101,7 @@ function HomeContent() {
                   <Text style={styles.footerBtnText}>Saber mais sobre o Modelo</Text>
                 </TouchableOpacity>
               </View>
+              <Footer />
         </View> 
       </ScrollView>
     </View>
@@ -276,7 +278,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginRight: 150,
     marginTop: 20,
-    marginLeft: 90
+    marginLeft: 90,
+    marginBottom: 30
   },
   footerBtnText: {
     fontSize: 14,
