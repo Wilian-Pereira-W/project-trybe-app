@@ -97,7 +97,7 @@ function HomeContent() {
                 <Text style={styles.footerText}>
                 Confiamos tanto no seu sucesso profissional que você não precisa pagar nada até estar trabalhando e com uma remuneração de, pelo menos, R$ 3.000,00.
                 </Text>
-                <TouchableOpacity style={styles.footerBtn}>
+                <TouchableOpacity style={styles.footerBtn} onPress={() => Linking.openURL('https://www.betrybe.com/msc-modelo-de-sucesso-compartilhado')}>
                   <Text style={styles.footerBtnText}>Saber mais sobre o Modelo</Text>
                 </TouchableOpacity>
               </View>
