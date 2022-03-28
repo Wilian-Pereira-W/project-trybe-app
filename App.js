@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Image, View, TouchableOpacity, Text } from 'react-native'
+import { Image, View, TouchableOpacity, Text, Linking } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
@@ -34,7 +34,7 @@ export default function App() {
                       <Image style={styles.logo}
                         source={require('./src/assets/images/logo.png')} />
                       <View style={styles.menu}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://app.betrybe.com/login')}>
                           <Text style={styles.login}>Login</Text>
                         </TouchableOpacity>
                         <MenuButton />
