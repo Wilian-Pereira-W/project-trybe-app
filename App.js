@@ -11,42 +11,41 @@ import MenuButton from './src/components/MenuButton';
 const Stack = createNativeStackNavigator();
 export default function App() {
 
-  
   return (
-    <NavigationContainer>
-      <MenuProvider>
-        <Stack.Navigator initialRouteName="Splash">
-          <Stack.Screen 
-            name="Splash"
-            component={Splash}
-            options={{
-              headerShown: false
-            }}
-          />
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{
-              headerStyle: {
-                backgroundColor: '#036B52',
-              },
-              headerTitle: () => (
-                  <View style={styles.container}>
-                    <Image style={styles.logo}
-                      source={require('./src/assets/images/logo.png')} />
-                    <View style={styles.menu}>
-                      <TouchableOpacity>
-                        <Text style={styles.login}>Login</Text>
-                      </TouchableOpacity>
-                      <MenuButton />
+      <NavigationContainer>
+        <MenuProvider>
+          <Stack.Navigator initialRouteName="Splash">
+            <Stack.Screen 
+              name="Splash"
+              component={Splash}
+              options={{
+                headerShown: false
+              }}
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{
+                headerStyle: {
+                  backgroundColor: '#036B52',
+                },
+                headerTitle: () => (
+                    <View style={styles.container}>
+                      <Image style={styles.logo}
+                        source={require('./src/assets/images/logo.png')} />
+                      <View style={styles.menu}>
+                        <TouchableOpacity>
+                          <Text style={styles.login}>Login</Text>
+                        </TouchableOpacity>
+                        <MenuButton />
+                      </View>
                     </View>
-                  </View>
-              )
-            }}
-          />
-        </Stack.Navigator>
-      </MenuProvider>
-    </NavigationContainer>
+                )
+              }}
+            />
+          </Stack.Navigator>
+        </MenuProvider>
+      </NavigationContainer>
   );
 }
 
