@@ -41,39 +41,39 @@ function Footer() {
             <Text style={styles.optionsText}>Blog</Text>
           </TouchableOpacity>
         </View>
-        <View style={{ flexDirection: 'row', marginTop: 50, alignItems: 'center'}}>
+        <View style={{ flexDirection: 'row', marginTop: 50, alignItems: 'center', justifyContent: 'center'}}>
           <TouchableOpacity 
             onPress={() => Linking.openURL('https://www.instagram.com/betrybe/')}
-            style={{width: 60, height: 60, margin:10, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
-            <Image style={{borderRadius: 50}}
+            style={{width: 30, height: 30, margin:5, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
+            <Image style={{borderRadius: 50, width:20, height:20}}
               source={require('../../assets/images/instagram.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={() => Linking.openURL('https://www.facebook.com/betrybe')}
-            style={{width: 60, height: 60, margin:10, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
-            <Image style={{borderRadius: 50}}
+            style={{width: 30, height: 30, margin:5, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
+            <Image style={{borderRadius: 50, width:20, height:20}}
               source={require('../../assets/images/facebook.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={() => Linking.openURL('https://twitter.com/betrybe')}
-            style={{width: 60, height: 60, margin:10, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
-            <Image style={{borderRadius: 50}}
+            style={{width: 30, height: 30, margin:5, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
+            <Image style={{borderRadius: 50, width:20, height:20}}
               source={require('../../assets/images/twitter.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={() => Linking.openURL('https://www.linkedin.com/school/betrybe/')}
-            style={{width: 60, height: 60, margin:10, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
-            <Image style={{borderRadius: 50}}
+            style={{width: 30, height: 30, margin:5, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
+            <Image style={{borderRadius: 50, width:20, height:20}}
               source={require('../../assets/images/linkedin.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={() => Linking.openURL('https://www.youtube.com/channel/UCZeN5eLUwiIyMaQjKR_ydVg')}
-            style={{width: 60, height: 60, margin:10, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
-            <Image style={{borderRadius: 50}}
+            style={{width: 30, height: 30, margin:5, backgroundColor: '#2FC18C', alignItems: 'center', justifyContent: 'center', borderRadius: 100}}>
+            <Image style={{borderRadius: 50, width:20, height:20}}
               source={require('../../assets/images/youtube.png')}
             />
           </TouchableOpacity>
