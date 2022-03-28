@@ -12,6 +12,7 @@ import { PaginationTestimony, PaginationCompany } from '../Pagination';
 import { testimony, company }  from '../../db';
 import { MenuContext } from '../../contexts/MenuContext';
 import Menu from '../Menu';
+import TalkingAboutUs from '../ TalkingAboutUs';
 
 
 function HomeContent() {
@@ -79,9 +80,24 @@ function HomeContent() {
               onSnapToItem={(index) => setActiveSlideConpany(index) }
             />
               {PaginationCompany(company, activeSlideCompany)}
-              <View>
+              <View style={{ backgroundColor: '#FFF', width: '100%',}}>
                 <TouchableOpacity style={styles.contentCompanyBtn}>
                   <Text style={styles.contentCompanyBtnText}>Quero ser empresa parceita</Text>
+                </TouchableOpacity>
+              </View>
+              <TalkingAboutUs />
+              <Image style={styles.footerImg}
+                source={{uri: 'https://assets-global.website-files.com/61549abf6fb9ca5e91bc5709/61a6362ac5e4ff25cbd9aca8_footer.png'}}
+              />
+              <View style={styles.footer}>
+                <Text style={styles.footerTitle}>
+                  A sua conquista é a nossa. A Trybe só ganha quando você começar a ganhar.
+                </Text>
+                <Text style={styles.footerText}>
+                Confiamos tanto no seu sucesso profissional que você não precisa pagar nada até estar trabalhando e com uma remuneração de, pelo menos, R$ 3.000,00.
+                </Text>
+                <TouchableOpacity style={styles.footerBtn}>
+                  <Text style={styles.footerBtnText}>Saber mais sobre o Modelo</Text>
                 </TouchableOpacity>
               </View>
         </View> 
@@ -94,6 +110,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff'
   },
   contentTitle: {
     width: '80%',
@@ -212,12 +229,60 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 5,
     marginTop: 30,
+    marginLeft: 80
   },
   contentCompanyBtnText: {
     fontSize: 14,
     fontWeight: "500",
     color: '#FFF'
-  }
+  },
+  footer: {
+    width: '100%',
+    backgroundColor: '#41197f',
+    alignItems: 'center'
+  },
+  footerImg: {
+    width: '100%',
+    maxWidth: '100%',
+    maxHeight: 600,
+    height: 600,
+  },
+  footerTitle: {
+    fontSize: 36,
+    lineHeight: 40,
+    fontWeight: '300',
+    textAlign: 'left',
+    paddingLeft: 20,
+    color: '#fff',
+    marginTop: 50
+  },
+  footerText: {
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: '300',
+    textAlign: 'left',
+    paddingRight: 50,
+    paddingLeft: 50,
+    marginTop: 30,
+    marginBottom: 30,
+    color: '#fff',
+  },
+  footerBtn: {
+    backgroundColor: '#006dfb',
+    width: 200,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    marginRight: 150,
+    marginTop: 20,
+    marginLeft: 90
+  },
+  footerBtnText: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: '#FFF'
+  },
 });
 
 export default HomeContent;
