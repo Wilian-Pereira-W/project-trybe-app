@@ -123,7 +123,6 @@ const styles = StyleSheet.create({
     width: 150,
     maxHeight: 100,
     marginRight: 10,
-    marginLeft: 85
   },
   certifiedImg: {
     width: 30,
