@@ -5,7 +5,6 @@ export  const PaginationTestimony = (testimony, activeSlide) => {
       <Pagination
         dotsLength={testimony.length}
         activeDotIndex={activeSlide}
-        style={{backgroundColor: 'red'}}
         dotStyle={{
             width: 20,
             height: 10,
