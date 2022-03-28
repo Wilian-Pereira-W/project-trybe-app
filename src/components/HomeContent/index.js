@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { Image, View, StyleSheet, Text, TouchableOpacity, ScrollView, Linking } from 'react-native';
 import CarouselRender from '../Carousel';
 import Carousel from 'react-native-snap-carousel';
 import TeachToProgram from '../TeachToProgram';
@@ -31,7 +31,7 @@ function HomeContent() {
             <Text  style={styles.contentText}>Construímos nosso currículo com base no que o mercado de trabalho busca em profissionais de tecnologia.
               Com o Modelo de Sucesso Compartilhado, você tem a opção de começar a pagar apenas quando estiver trabalhando.
             </Text>
-            <TouchableOpacity style={styles.contentBtn}>
+            <TouchableOpacity style={styles.contentBtn} onPress={() => Linking.openURL('https://app.betrybe.com/registration')}>
               <Text style={styles.contentBtnText}>Dê o primeiro passo</Text>
             </TouchableOpacity>
             <Image 
@@ -54,7 +54,7 @@ function HomeContent() {
               onSnapToItem={(index) => setActiveSlide(index) }
             />
             {PaginationTestimony(testimony, activeSlide)}
-            <TouchableOpacity style={styles.contentBtnWant}>
+            <TouchableOpacity style={styles.contentBtnWant} onPress={() => Linking.openURL('https://app.betrybe.com/registration')}>
               <Text style={styles.contentBtnWantText}>Quero me inscrever</Text>
             </TouchableOpacity>
               <Text style={styles.contentTitleOurWork} numberOfLines={2}>Nosso trabalho é te ajudar a conseguir o seu</Text>
@@ -82,7 +82,7 @@ function HomeContent() {
             />
               {PaginationCompany(company, activeSlideCompany)}
               <View style={{ backgroundColor: '#FFF', width: '100%',}}>
-                <TouchableOpacity style={styles.contentCompanyBtn}>
+                <TouchableOpacity style={styles.contentCompanyBtn} onPress={() => Linking.openURL('https://www.betrybe.com/empresas-parceiras')}>
                   <Text style={styles.contentCompanyBtnText}>Quero ser empresa parceita</Text>
                 </TouchableOpacity>
               </View>
